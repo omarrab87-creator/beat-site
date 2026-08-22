@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BEAT Connect — Digital Health Operating System</title>
+<meta name="description" content="BEAT Connect is a digital health operating system for remote patient monitoring and clinical operations. Built for Saudi healthcare.">
+
+<meta property="og:title" content="BEAT Connect">
+<meta property="og:description" content="One platform. Every patient. Always monitored.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600&family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#07112F;
+  --navy-2:#0A1A3D;
+  --blue:#0B8CFF;
+  --gold:#C9A227;
+  --c-100:#F2F7FC;
+  --c-300:#AFC2D6;
+  --c-500:#7A8CA3;
+  --line:rgba(255,255,255,.09);
+  --fl:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --fa:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:var(--fl);
+  background:var(--navy);
+  color:var(--c-100);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% -10%, rgba(11,140,255,.10), transparent 62%),
+    radial-gradient(ellipse 70% 55% at 95% 105%, rgba(201,162,39,.055), transparent 62%);
+}
+body[dir="rtl"]{font-family:var(--fa)}
+
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* ---------- header ---------- */
+header{padding:30px 0 0}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .txt{line-height:1.15}
+.brand .nm{font-family:var(--fl);font-size:19px;font-weight:600;letter-spacing:.15em;color:#fff}
+.brand .tg{font-family:var(--fl);font-size:9.5px;font-weight:300;letter-spacing:.13em;color:var(--c-500);text-transform:uppercase;margin-top:2px}
+
+.lang{
+  font-family:var(--fl);
+  background:transparent;
+  border:1px solid var(--line);
+  color:var(--c-300);
+  padding:8px 16px;
+  border-radius:99px;
+  font-size:12.5px;
+  letter-spacing:.06em;
+  cursor:pointer;
+  transition:border-color .18s, color .18s;
+}
+.lang:hover{border-color:rgba(255,255,255,.24);color:#fff}
+
+/* ---------- hero ---------- */
+main{flex:1;display:flex;align-items:center;padding:64px 0}
+
+h1{
+  font-size:clamp(34px,5.6vw,60px);
+  font-weight:200;
+  letter-spacing:-.025em;
+  line-height:1.13;
+  color:#fff;
+  max-width:16ch;
+  margin-bottom:26px;
+}
+body[dir="rtl"] h1{letter-spacing:0;line-height:1.35;max-width:18ch}
+
+.lede{
+  font-size:clamp(15px,1.75vw,18px);
+  font-weight:300;
+  line-height:1.72;
+  color:var(--c-300);
+  max-width:56ch;
+  margin-bottom:56px;
+}
+body[dir="rtl"] .lede{line-height:1.95;max-width:52ch}
+
+/* ---------- capabilities ---------- */
+.caps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(238px,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:56px;
+}
+.cap{background:rgba(255,255,255,.021);padding:28px 26px}
+.cap h2{
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:.01em;
+  color:#fff;
+  margin-bottom:11px;
+}
+.cap p{
+  font-size:13.5px;
+  font-weight:300;
+  line-height:1.68;
+  color:var(--c-500);
+}
+body[dir="rtl"] .cap p{line-height:1.9}
+
+.rule{width:22px;height:2px;background:var(--blue);border-radius:2px;margin-bottom:16px}
+.cap:last-child .rule{background:var(--gold)}
+
+/* ---------- contact ---------- */
+.cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.mail{
+  font-family:var(--fl);
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:var(--blue);
+  color:#fff;
+  text-decoration:none;
+  padding:13px 26px;
+  border-radius:8px;
+  font-size:14.5px;
+  font-weight:500;
+  transition:background .18s;
+}
+.mail:hover{background:#0A7CE6}
+.cta .note{font-size:13px;font-weight:300;color:var(--c-500)}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line);
+  padding:24px 0 30px;
+}
+.foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+  font-size:12.5px;
+  font-weight:300;
+  color:var(--c-500);
+}
+.foot a{color:var(--c-500);text-decoration:none}
+.foot a:hover{color:var(--c-300)}
+
+@media (max-width:640px){
+  main{padding:44px 0}
+  .caps{margin-bottom:44px}
+  .lede{margin-bottom:40px}
+}
+</style>
+</head>
+
+<body dir="ltr">
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="BEAT Connect">
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#0B8CFF">
+          <path fill-rule="evenodd" d="M155 55 H270 C345 55 385 92 385 145 C385 187 361 211 325 221 C365 231 395 258 395 309 C395 368 348 405 270 405 H155 V55 Z M176 91 V205 H270 C326 205 349 184 349 147 C349 110 326 91 270 91 H176 Z M176 241 V369 H270 C329 369 359 349 359 307 C359 266 330 241 270 241 H176 Z"/>
+          <path d="M125 60 L158 40 L170 185 L137 204 Z"/>
+          <path d="M134 245 L170 224 L156 398 L122 418 Z"/>
+        </g>
+      </svg>
+      <span class="txt">
+        <span class="nm">BEAT</span>
+        <span class="tg" data-i18n="brandtag">Better Engagement. Action on Time.</span>
+      </span>
+    </a>
+
+    <button class="lang" id="langBtn" type="button">العربية</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1 data-i18n="h1">One platform. Every patient. Always monitored.</h1>
+
+    <p class="lede" data-i18n="lede">
+      BEAT Connect is a digital health operating system for remote patient
+      monitoring and clinical operations — built for healthcare providers
+      in Saudi Arabia.
+    </p>
+
+    <div class="caps">
+      <div class="cap">
+        <div class="rule"></div>
+        <h2 data-i18n="c1t">Continuous Monitoring</h2>
+        <p data-i18n="c1b">Readings from connected devices flow directly into clinical review, without manual re-entry.</p>
+      </div>
+      <div class="cap">
+        <div class="rule"></div>
+        <h2 data-i18n="c2t">Governed Clinical Alerting</h2>
+        <p data-i18n="c2b">Configurable thresholds, defined escalation paths, and a complete audit trail behind every alert.</p>
+      </div>
+      <div class="cap">
+        <div class="rule"></div>
+        <h2 data-i18n="c3t">Built for Saudi Healthcare</h2>
+        <p data-i18n="c3b">Data sovereignty, Arabic-first interfaces, and integration with the systems already in place.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="mail" href="mailto:info@beatconnect.sa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
+          <path d="M3 6l9 7 9-7"/>
+        </svg>
+        <span data-i18n="cta">Get in touch</span>
+      </a>
+      <span class="note" data-i18n="ctanote">info@beatconnect.sa</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span data-i18n="loc">Riyadh, Saudi Arabia</span>
+    <span data-i18n="copy">© 2026 BEAT Connect</span>
+  </div>
+</footer>
+
+<script>
+const AR = {
+  brandtag: "رعاية أفضل. استجابة في وقتها.",
+  h1: "منصة واحدة. كل مريض. متابعة مستمرة.",
+  lede: "بيت كونكت نظام تشغيل صحي رقمي للمتابعة عن بُعد والعمليات السريرية — مبني لمقدّمي الرعاية الصحية في المملكة العربية السعودية.",
+  c1t: "متابعة مستمرة",
+  c1b: "قراءات الأجهزة المتصلة تصل مباشرة إلى المراجعة السريرية، بلا إدخال يدوي.",
+  c2t: "تنبيهات سريرية محوكمة",
+  c2b: "عتبات قابلة للتهيئة، ومسارات تصعيد محددة، وسجل تدقيق كامل خلف كل تنبيه.",
+  c3t: "مبني للقطاع الصحي السعودي",
+  c3b: "سيادة البيانات، وواجهات عربية أولاً، وتكامل مع الأنظمة القائمة.",
+  cta: "تواصل معنا",
+  ctanote: "info@beatconnect.sa",
+  loc: "الرياض، المملكة العربية السعودية",
+  copy: "© 2026 بيت كونكت"
+};
+
+const EN = {};
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  EN[el.dataset.i18n] = el.innerHTML.trim();
+});
+
+let ar = false;
+const btn = document.getElementById('langBtn');
+
+btn.addEventListener('click', () => {
+  ar = !ar;
+  const dict = ar ? AR : EN;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    if (dict[el.dataset.i18n]) el.innerHTML = dict[el.dataset.i18n];
+  });
+  document.body.dir = ar ? 'rtl' : 'ltr';
+  document.documentElement.lang = ar ? 'ar' : 'en';
+  document.title = ar
+    ? 'بيت كونكت — نظام تشغيل صحي رقمي'
+    : 'BEAT Connect — Digital Health Operating System';
+  btn.textContent = ar ? 'English' : 'العربية';
+});
+</script>
+
+</body>
+</html>
